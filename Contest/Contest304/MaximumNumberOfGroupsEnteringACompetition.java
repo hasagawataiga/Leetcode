@@ -1,6 +1,6 @@
 import java.util.*;
 public class MaximumNumberOfGroupsEnteringACompetition {
-    //My solution is that 1st group has 1 student, 2nd group has 2 student, 3rd group has 3 student, ...
+    //My solution is that 1st group has 1 student, 2nd group has 2 students, 3rd group has 3 students, ...
     //I assumpt that the array of grades is ascending ordered
     //For example, we have 10 students then It should be grouped to 1,2,3,4
     //Applying function for the sum of increasing number: n(n+1)/2 = sum
