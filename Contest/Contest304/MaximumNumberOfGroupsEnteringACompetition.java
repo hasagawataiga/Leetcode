@@ -1,4 +1,4 @@
-import java.util.*;
+
 public class MaximumNumberOfGroupsEnteringACompetition {
     //My solution is that 1st group has 1 student, 2nd group has 2 students, 3rd group has 3 students, ...
     //I assumpt that the array of grades is ascending ordered
