@@ -1,4 +1,3 @@
-package Contest.Contest306;
 
 public class NodeWithHighestEdgeScore {
     public int edgeScore(int[] edges){
