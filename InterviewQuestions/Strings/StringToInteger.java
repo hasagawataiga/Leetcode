@@ -1,3 +1,5 @@
+package InterviewQuestions.Strings;
+
 import java.util.*;
 public class StringToInteger {
     public int myAtoi (String s){

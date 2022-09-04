@@ -1,3 +1,5 @@
+package Contest.Contest306;
+
 import java.util.*;
 public class ConstructSmallestNumberFromDIString {
     public String smallestNumber(String pattern) {

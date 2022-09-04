@@ -1,3 +1,5 @@
+package Contest.Contest307;
+
 public class MininumHoursOfTrainingToWinACompetition {
     public int minNumberOfHours(int initialEnergy, int initialExperience, int[] energy, int[] experience) {
         int hours = 0;

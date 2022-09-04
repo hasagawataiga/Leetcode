@@ -1,5 +1,7 @@
+package Contest.Contest307;
+
 import java.util.*;
-public class TreeNode {
+class TreeNode {
     int val;
     TreeNode left;
     TreeNode right;

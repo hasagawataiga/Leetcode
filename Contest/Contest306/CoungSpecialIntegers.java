@@ -1,3 +1,5 @@
+package Contest.Contest306;
+
 import java.util.*;
 class Solution {
     int[][][] cache;
