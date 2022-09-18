@@ -7,7 +7,9 @@ public class LengthOfTheLongestAlphabeticalContinuousSubstring {
             int temp = 1;
             int j = i;
             while(j+1 < s.length()){
-                if(s.charAt(j) != s.charAt(j+1) + 1){
+                int firstChar = s.charAt(j);
+                int secondChar = s.charAt(j+1);
+                if(firstChar+1 != secondChar){
                     break;
                 }
                 j++;
