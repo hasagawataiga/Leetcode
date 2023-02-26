@@ -1,4 +1,4 @@
-package interview_questions.strings;
+package interview_questions.array;
 
 public class Remove_duplicates_from_sorted_array {
     public int removeDuplicates(int[] nums) {
