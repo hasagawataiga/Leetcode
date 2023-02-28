@@ -1,4 +1,5 @@
-
+import java.util.HashSet;
+import java.util.Set;
 
 class Contains_duplicate {
     public boolean containsDuplicate(int[] nums) {
