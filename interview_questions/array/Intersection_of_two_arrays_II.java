@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Intersection_of_two_arrays_II {
     public int[] intersect(int[] nums1, int[] nums2) {
         int[] container = new int[1001];
