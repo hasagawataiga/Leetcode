@@ -7,8 +7,4 @@ public class Reverse_string{
             s[length - 1 - i] = temp;
         }
     }
-    private void swap (char[] s, int firstChar, int secondChar){
-        char temp = s[firstChar];
-        s[firstChar] = s[secondChar];
-    }
 }
