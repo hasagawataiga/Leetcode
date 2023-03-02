@@ -1,3 +1,4 @@
+package interview_questions.string;
 public class Reverse_integer {
     public int reverse(int x) {
         int max = Integer.MAX_VALUE;

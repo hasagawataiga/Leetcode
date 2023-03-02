@@ -1,3 +1,4 @@
+package interview_questions.string;
 import java.util.HashMap;
 
 public class First_unique_character_in_a_string {

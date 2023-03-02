@@ -1,3 +1,4 @@
+package interview_questions.string;
 public class String_to_integer {
     public int myAtoi(String s) {
         int index = 0;
