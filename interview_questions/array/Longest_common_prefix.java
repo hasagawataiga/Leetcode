@@ -1,21 +1,27 @@
 public class Longest_common_prefix {
     public String longestCommonPrefix(String[] strs) {
-        String res = "";
-        int arrayIndex = 0;
-        int charIndex = 0;
-        while (charIndex < strs[0].length()){
-            arrayIndex = 0;
-            char ch = strs[0].charAt(charIndex);
-            while (arrayIndex < (strs.length - 1) && charIndex < strs[arrayIndex + 1].length() && ch == strs[arrayIndex + 1].charAt(charIndex)){
-                arrayIndex++;
+        int shortestStrIndex = 0;
+        // Find the most shortest String in array
+        for (int i = 0; i < strs.length; i++){
+            if (strs[i].equals("")){
+                return "";
             }
-            if (arrayIndex == strs.length - 1){
-                res += ch;
-            } else {
-                break;
+            if (strs[shortestStrIndex].length() > strs[i].length()){
+                shortestStrIndex = i;
             }
-            charIndex++;
         }
-        return res;
+        if (strs.length < 2){
+            return strs[0];
+        }
+        // Compares every char in the shortest string to the other strings in the array
+        // the index of chars are similar in every single strings
+        for (int i = 0; i < strs[shortestStrIndex].length(); i++){
+            for (int j = 0; j < strs.length; j++){
+                if (strs[shortestStrIndex].charAt(i) != strs[j].charAt(i)){
+                    return strs[shortestStrIndex].substring(0, i);
+                }
+            }
+        }
+        return strs[shortestStrIndex];
     }
 }
