@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 public class Valid_sudoku {
     public boolean isValidSudoku(char[][] board) {
         int[] rows = new int[9];
@@ -23,4 +21,3 @@ public class Valid_sudoku {
         return true;
     }
 }
->>>>>>> 5de912d (Rotate Image solution)
