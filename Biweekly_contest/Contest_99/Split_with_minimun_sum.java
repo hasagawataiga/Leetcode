@@ -2,7 +2,7 @@ package Biweekly_contest.Contest_99;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
+import java.util.List;  
 
 public class Split_with_minimun_sum {
     public int splitNum(int num) {
