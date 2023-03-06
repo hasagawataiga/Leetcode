@@ -1,6 +1,6 @@
 package interview_questions.trees;
 
-public class Valid_binery_search_tree {
+public class Valid_binary_search_tree {
     public boolean isValidBST(TreeNode root) {
         return isValidBST(root, null, null);
     }
