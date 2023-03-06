@@ -13,6 +13,7 @@ public class Binary_tree_level_order_traveral {
             return res;
         }
         queue.add(root);
+        // Using BFS
         while (!queue.isEmpty()){
             List<Integer> tempList = new ArrayList<>();
             int length = queue.size();
