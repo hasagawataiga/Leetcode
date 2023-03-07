@@ -1,4 +1,4 @@
-package interview_questions.strings;
+package interview_questions.string;
 
 import java.util.*;
 public class StringToInteger {
