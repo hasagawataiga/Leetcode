@@ -1,5 +1,4 @@
 package interview_questions.string;
-import java.util.HashMap;
 
 public class Valid_anagram {
     public boolean isAnagram(String s, String t) {
