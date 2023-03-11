@@ -1,4 +1,4 @@
-package others;
+package interview_questions.others;
 
 public class Reverse_bits {
     // you need treat n as an unsigned value

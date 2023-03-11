@@ -1,4 +1,4 @@
-package others;
+package interview_questions.others;
 
 public class Number_of_1_bits {
     // you need to treat n as an unsigned value

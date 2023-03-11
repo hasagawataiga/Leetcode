@@ -1,4 +1,4 @@
-package others;
+package interview_questions.others;
 
 public class Hamming_distance {
     public int hammingDistance(int x, int y) {
