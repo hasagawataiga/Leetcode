@@ -1,4 +1,4 @@
-package Binary_tree.Traverse_a_tree;
+package Binary_tree.Solve_problem_recursively;
 
 import interview_questions.trees.TreeNode;
 
