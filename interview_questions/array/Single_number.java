@@ -1,3 +1,5 @@
+package interview_questions.array;
+
 public class Single_number {
     public int singleNumber(int[] nums) {
         int res = nums[0];

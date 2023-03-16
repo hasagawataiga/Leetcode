@@ -1,3 +1,5 @@
+package interview_questions.array;
+
 public class Valid_sudoku {
     public boolean isValidSudoku(char[][] board) {
         int[] rows = new int[9];

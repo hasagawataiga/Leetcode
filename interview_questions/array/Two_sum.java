@@ -1,3 +1,5 @@
+package interview_questions.array;
+
 import java.util.HashMap;
 
 public class Two_sum {

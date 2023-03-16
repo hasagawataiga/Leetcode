@@ -1,3 +1,5 @@
+package interview_questions.array;
+
 
 class Best_time_to_buy_and_sell_stock_2{
     public int maxProfit(int[] prices) {

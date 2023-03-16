@@ -1,3 +1,5 @@
+package interview_questions.array;
+
 public class Move_zeroes {
     public void moveZeroes(int[] nums) {
         int pointer1 = 0;

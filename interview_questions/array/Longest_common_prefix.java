@@ -1,3 +1,5 @@
+package interview_questions.array;
+
 public class Longest_common_prefix {
     public String longestCommonPrefix(String[] strs) {
         int shortestStrIndex = 0;
