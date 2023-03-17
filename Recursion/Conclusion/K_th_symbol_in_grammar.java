@@ -14,7 +14,7 @@ package Recursion.Conclusion;
 //  3. parent is 0, k is even -> k = 1
 //  4. parent is 0, k is odd -> k = 0
 // Followed by the render rule: 0 -> 01, 1 -> 10
-public class K_th_symbols_in_grammar {
+public class K_th_symbol_in_grammar {
     public int kthGrammar(int n, int k) {
         return kthGrammar(k);
     }
