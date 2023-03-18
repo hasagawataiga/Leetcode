@@ -1,7 +1,4 @@
 package Leetcode_75.String;
-
-import java.util.HashMap;
-
 public class Isomorphic_strings {
     public boolean isIsomorphic(String s, String t) {
         int lengthS = s.length();

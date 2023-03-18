@@ -60,7 +60,6 @@ public class Trie {
             return true;
         }
         int temp = val.compareTo(prefix);
-        Trie tempTrie;
         if (temp > 0){
             if (left == null){
                 return false;
