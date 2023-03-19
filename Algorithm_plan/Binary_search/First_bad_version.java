@@ -15,6 +15,7 @@ public class First_bad_version {
         }
         return left;
     }
+    // Dummy method - ignore it
     private boolean isBadVersion(int n){
         return false;
     }
