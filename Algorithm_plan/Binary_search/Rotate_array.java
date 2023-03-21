@@ -10,9 +10,6 @@ public class Rotate_array {
         if (k == 0){
             return;
         }
-        if (length == 1){
-            return;
-        }
         reverse(nums, 0, length - 1);
         reverse(nums, k, length - 1);
         reverse(nums, 0, k - 1);
