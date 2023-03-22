@@ -1,4 +1,4 @@
-package Algorithm_plan.Binary_search;
+package Algorithm_plan.Two_pointers;
 
 import java.util.Arrays;
 
