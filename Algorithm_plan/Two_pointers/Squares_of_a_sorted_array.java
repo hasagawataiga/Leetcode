@@ -1,6 +1,5 @@
 package Algorithm_plan.Two_pointers;
 
-import java.util.Arrays;
 
 // Use 2 pointers
 // Compare the squares of left and right
