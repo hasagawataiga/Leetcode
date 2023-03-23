@@ -21,9 +21,9 @@ public class Number_of_operations_to_make_network_connected{
         // Initialize visited array and number of connected components
         boolean[] visited = new boolean[n];
         int numComponents = 0;
-
+        dfs(0, visited, graph);
         // Perform DFS to count number of connected components
-        for (int i = 0; i < n; i++) {
+        for (int i = 1; i < n; i++) {
             if (!visited[i]) {
                 numComponents++;
                 dfs(i, visited, graph);
@@ -31,7 +31,7 @@ public class Number_of_operations_to_make_network_connected{
         }
 
         // Return number of cables needed to connect all components
-        return numComponents - 1;
+        return numComponents;
     }
 
     private void dfs(int node, boolean[] visited, List<List<Integer>> graph) {
