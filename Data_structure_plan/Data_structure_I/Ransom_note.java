@@ -1,33 +1,25 @@
 package Data_structure_plan.Data_structure_I;
 
-import java.util.HashMap;
 
+
+// Approach: find the index of chars of ransomNote in magazine
+//  if it exists, we will ignore it in the next indexOf called by formula count[ch - 'a'] = index + 1;
+//      the next indexOf(ch) will start from the previous index of this char + 1
 public class Ransom_note {
     public boolean canConstruct(String ransomNote, String magazine) {
-        HashMap<Character, Integer> container = new HashMap<>();
-        char[] noteChar = ransomNote.toCharArray();
-        char[] magazineChar = magazine.toCharArray();
-        int noteLength = noteChar.length;
-        int magazineLength = magazineChar.length;
-        if (noteLength > magazineLength){
+        int[] count = new int[26];
+        int magazineLength = magazine.length();
+        int ransomNoteLength = ransomNote.length();
+        if (magazineLength < ransomNoteLength){
             return false;
         }
-        for (int i = 0; i < magazineLength; i++){
-            if (i < noteLength){
-                char ch = noteChar[i];
-                if (container.putIfAbsent(ch, 1) != null){
-                    container.replace(ch, container.get(ch) + 1);
-                }
-            }
-            char ch2 = magazineChar[i];
-            if (container.putIfAbsent(ch2, -1) != null){
-                container.replace(ch2, container.get(ch2) - 1);
-            }
-        }
-        for (int value : container.values()){
-            if (value > 0){
+        for (int i = 0; i < ransomNoteLength; i++){
+            char ch = ransomNote.charAt(i);
+            int index = magazine.indexOf(ch, count[ch - 'a']);
+            if (index == -1){
                 return false;
             }
+            count[ch - 'a'] = index + 1;
         }
         return true;
     }
