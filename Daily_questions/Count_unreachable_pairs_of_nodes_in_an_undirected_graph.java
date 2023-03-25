@@ -1,4 +1,8 @@
 
+
+// First, using Union Find algorithm to find the group of nodes
+// Then calculate the result pairs by using the formula:
+//  unreachablePairs = nodes in group * nodes not in group (remainNodes)
 public class Count_unreachable_pairs_of_nodes_in_an_undirected_graph {
     int[] parent;
     int[] rank;
