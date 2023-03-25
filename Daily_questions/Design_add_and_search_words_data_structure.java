@@ -1,4 +1,3 @@
-package Daily_questions;
 
 public class Design_add_and_search_words_data_structure {
     class WordDictionary {

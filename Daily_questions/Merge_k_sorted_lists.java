@@ -1,4 +1,3 @@
-package Daily_questions;
 import interview_questions.linked_list.ListNode;
 
 public class Merge_k_sorted_lists {

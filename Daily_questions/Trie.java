@@ -1,4 +1,3 @@
-package Daily_questions;
 
 public class Trie {
     String val;

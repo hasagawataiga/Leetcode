@@ -1,4 +1,4 @@
-package Daily_questions;
+package aily_questions;
 
 public class Numbers_of_zero_filled_subarrays{
     public long zeroFilledSubarray(int[] nums) {

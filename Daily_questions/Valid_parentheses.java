@@ -1,4 +1,3 @@
-package Daily_questions;
 
 public class Valid_parentheses {
     public boolean isValid(String s) {

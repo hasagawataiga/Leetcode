@@ -1,4 +1,3 @@
-package Daily_questions;
 
 import interview_questions.trees.TreeNode;
 

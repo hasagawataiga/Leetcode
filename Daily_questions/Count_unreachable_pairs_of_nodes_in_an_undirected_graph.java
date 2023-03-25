@@ -1,37 +1,51 @@
-import java.util.ArrayList;
-import java.util.List;
 
 public class Count_unreachable_pairs_of_nodes_in_an_undirected_graph {
+    int[] parent;
+    int[] rank;
     public long countPairs(int n, int[][] edges) {
-        long total = (long)n * (n - 1) / 2;
-        List<Integer>[] list = new List[n];
+        parent = new int[n];
+        rank = new int[n];
         for (int i = 0; i < n; i++){
-            list[i] = new ArrayList<>();
+            parent[i] = i;
         }
-        boolean[] visited = new boolean[n];
         for (int[] edge : edges){
-            list[edge[0]].add(edge[1]);
-            list[edge[1]].add(edge[0]);
+            unionFind(edge[0], edge[1]);
         }
-        long unreachableNodes = total;
-        for (int i = 0; i < n; i++) {
-            if (!visited[i]) {
-                int count = dfs(i, list, visited, new int[1]);
-                System.out.println(count + " ");
-                unreachableNodes -= (long)count * (count - 1) / 2;
+        long[] componentGroup = new long[n];
+        for (int i = 0; i < n; i++){
+            componentGroup[findParent(i)]++;
+        }
+        long unreachablePairs = 0;
+        long remainNodes = n;
+        for (int i = 0; i < n; i++){
+            if (componentGroup[i] == 0){
+                continue;
             }
+            remainNodes -= componentGroup[i];
+            unreachablePairs += componentGroup[i] * remainNodes;
         }
-        return unreachableNodes;
+        return unreachablePairs;
     }
-    private int dfs(int node, List<Integer>[] list, boolean[] visited, int[] count) {
-        if (visited[node]){
-            return count[0];
+    private void unionFind(int a,int b){
+        int aParent = findParent(a);
+        int bParent = findParent(b);
+        if (aParent == bParent){
+            return;
         }
-        visited[node] = true;
-        count[0]++;
-        for (int neighbor : list[node]) {
-            dfs(neighbor, list, visited, count);
+        if (rank[aParent] > rank[bParent]){
+            parent[bParent] = aParent;
+        } else if (rank[aParent] < rank[bParent]){
+            parent[aParent] = bParent;
+        } else {
+            parent[bParent] = aParent;
+            rank[aParent]++;
         }
-        return count[0];
+        return;
+    }
+    private int findParent(int a){
+        while(parent[a] != a){
+            a = parent[parent[a]];
+        }
+        return a;
     }
 }

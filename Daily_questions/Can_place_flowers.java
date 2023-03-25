@@ -1,4 +1,3 @@
-package Daily_questions;
 
 
 public class Can_place_flowers {
