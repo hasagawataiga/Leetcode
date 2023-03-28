@@ -2,34 +2,36 @@ package Leetcode_75.Graph_DFS_BFS;
 
 public class Number_of_islands {
     public int numIslands(char[][] grid) {
+        if (grid == null || grid.length == 0) {
+            return 0;
+        }
         int m = grid.length;
         int n = grid[0].length;
-        boolean[][] visited = new boolean[m][n];
         int count = 0;
-        for (int i = 0; i < m; i++){
-            for (int j = 0; j < n; j++){
-                if (grid[i][j] == '1' && !visited[i][j]){
-                    dfs(grid, visited, i, j);
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == '1') {
                     count++;
+                    dfs(grid, i, j, m, n);
                 }
             }
         }
         return count;
     }
-    private void dfs(char[][] grid, boolean[][] visited, int row, int col){
-        if (row < 0 || row >= grid.length || col < 0 || col >= grid[0].length){
-            return;
+
+    private void dfs(char[][] grid, int row, int col, int m, int n) {
+        grid[row][col] = '0';
+        if (row < m - 1 && grid[row + 1][col] == '1'){
+            dfs(grid, row + 1, col, m, n);
         }
-        if (visited[row][col]){
-            return;
+        if (row > 0 && grid[row - 1][col] == '1'){
+            dfs(grid, row - 1, col, m, n);
         }
-        if (grid[row][col] == 0){
-            return;
+        if (col < n - 1 && grid[row][col + 1] == '1'){
+            dfs(grid, row, col + 1, m, n);
         }
-        visited[row][col] = true;
-        dfs(grid, visited, row - 1, col);
-        dfs(grid, visited, row + 1, col);
-        dfs(grid, visited, row, col - 1);
-        dfs(grid, visited, row, col + 1);
+        if (col > 0 && grid[row][col - 1] == '1'){
+            dfs(grid, row, col - 1, m, n);
+        }
     }
 }
