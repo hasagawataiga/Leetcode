@@ -7,27 +7,33 @@ public class Backspace_string_compare {
         int count1 = 0;
         int count2 = 0;
         while (i >=0 || j >= 0){
-            count1 = 0;
-            count2 = 0;
-            while (i >= 0 && s.charAt(i) == '#'){
-                count1++;
-                i--;
+            while (i >= 0){
+                if (s.charAt(i) == '#'){
+                    count1++;
+                    i--;
+                } else if (count1 > 0){
+                    count1--;
+                    i--;
+                } else {
+                    break;
+                }
             }
-            while (i >= 0 && count1 > 0){
-                i--;
-                count1--;
+
+            while (j >= 0){
+                if (t.charAt(j) == '#'){
+                    count2++;
+                    j--;
+                } else if (count2 > 0){
+                    count2--;
+                    j--;
+                } else {
+                    break;
+                }
             }
-            while (j >= 0 && t.charAt(j) == '#'){
-                count2++;
-                j--;
-            }
-            while (j >= 0 && count2 > 0){
-                j--;
-                count2--;
-            }
-            if (j >= 0 && i >= 0 && s.charAt(i) != t.charAt(j)){
+
+            if (i >= 0 && j >= 0 && s.charAt(i) != t.charAt(j)){
                 return false;
-            } else if ((j >= 0) != (i >= 0)){
+            } else if ((i >= 0) != (j >= 0)){
                 return false;
             }
             i--;
