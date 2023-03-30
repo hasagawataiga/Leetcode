@@ -16,16 +16,7 @@ public class Bulls_and_cows {
             }
         }
         for (int i = 0; i < secretCount.length; i++){
-            if (secretCount[i] == 0 || guessCount[i] == 0){
-                continue;
-            }
-            if (secretCount[i] == guessCount[i]){
-                cows += secretCount[i];
-            } else if (secretCount[i] > guessCount[i]){
-                cows += guessCount[i];
-            } else {
-                cows += secretCount[i];
-            }
+            cows += Math.min(secretCount[i], guessCount[i]);
         }
         return bulls + "A" + cows + "B";
     }
