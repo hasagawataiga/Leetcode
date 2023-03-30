@@ -5,7 +5,7 @@ public class Longest_repeating_character_replacement {
         int maxSub = 0;
         int left = 0;
         int right = 0;
-        char[] freq = new char[26];
+        int[] freq = new int[26];
         for (char ch : s.toCharArray()){
             freq[ch - 'A']++;
         }
