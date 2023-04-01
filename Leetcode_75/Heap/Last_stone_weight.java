@@ -1,5 +1,8 @@
 package Leetcode_75.Heap;
 
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
 public class Last_stone_weight {
     public int lastStoneWeight(int[] stones) {
         PriorityQueue<Integer> queue = new PriorityQueue<>(Comparator.reverseOrder());
