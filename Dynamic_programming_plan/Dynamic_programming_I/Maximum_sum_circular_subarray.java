@@ -1,5 +1,6 @@
 package Dynamic_programming_plan.Dynamic_programming_I;
 
+// Use Kadane algorithm to find the minSum and maxSum
 public class Maximum_sum_circular_subarray {
     public int maxSubarraySumCircular(int[] nums) {
         int preSum = 0;
