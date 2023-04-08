@@ -4,6 +4,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+// Using BFS approach
+
 public class Clone_graph {
     public Node cloneGraph(Node node) {
         if (node == null){
@@ -27,6 +29,7 @@ public class Clone_graph {
         return res;
     }
 }
+
 class Node {
     public int val;
     public List<Node> neighbors;
