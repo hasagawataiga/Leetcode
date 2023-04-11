@@ -4,30 +4,30 @@ import java.util.Stack;
 
 public class Decode_string {
     public String decodeString(String s) {
-        Stack<Integer> numStack = new Stack<>();
-        Stack<StringBuilder> strStack = new Stack<>();
-        StringBuilder cur = new StringBuilder();
-        int num = 0;
-        
-        for (char c : s.toCharArray()) {
-            if (Character.isDigit(c)) {
-                num = num * 10 + (c - '0');
-            } else if (c == '[') {
-                numStack.push(num);
-                strStack.push(cur);
-                cur = new StringBuilder();
-                num = 0;
-            } else if (c == ']') {
-                StringBuilder tmp = cur;
-                cur = strStack.pop();
-                for (int i = numStack.pop(); i > 0; i--) {
-                    cur.append(tmp);
+        Stack<String> strStack = new Stack<>();
+        Stack<Integer> countStack = new Stack<>();
+        int count = 0;
+        String currStr = "";
+        for (char ch : s.toCharArray()){
+            if (Character.isDigit(ch)){
+                count = count * 10 + (ch - '0');
+            } else if (ch == '['){
+                countStack.push(count);
+                count = 0;
+                strStack.push(currStr);
+                currStr = "";
+            } else if (ch == ']'){
+                int times = countStack.pop();
+                String prevStr = strStack.pop();
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < times; i++){
+                    sb.append(currStr);
                 }
+                currStr = prevStr + sb;
             } else {
-                cur.append(c);
+                currStr += ch;
             }
         }
-        
-        return cur.toString();
+        return currStr;
     }
 }
