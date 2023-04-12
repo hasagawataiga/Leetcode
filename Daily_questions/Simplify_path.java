@@ -1,41 +1,27 @@
+import java.util.Stack;
+
 public class Simplify_path {
     public String simplifyPath(String path) {
-        List<String> list = new ArrayList<>();
-        String res = "";
         String[] strings = path.split("/");
-        // System.out.println(strings.length);
-        // for (String str : strings){
-        //     System.out.print(str + ", ");
-        // }
+        Stack<String> stack = new Stack<>();
         for (int i = 0; i < strings.length; i++){
             String str = strings[i];
             if (str.isEmpty()){
                 continue;
             } else if (str.equals(".")){
-                if (i < 1){
-                    list.add("");
-                } else {
-                    list.add(strings[i - 1]);
-                }
+                continue;
             } else if (str.equals("..")){
-                if (i < 1){
-                    list.add("");
-                } else if (i < 2){
-                    list.add(strings[i - 1]);
-                } else {
-                    list.add(strings[i - 2]);
+                if (!stack.isEmpty()){
+                    stack.pop();
                 }
             } else {
-                list.add(str);
+                stack.push(str);
             }
         }
-        // System.out.println();
-        // for (String str : list){
-        //     System.out.print(str + ", ");
-        // }
-        for (String str : list){
-            res += "/" + str;
+        String res = "";
+        while (!stack.isEmpty()){
+            res = "/" + stack.pop() + res;
         }
-        return res == "" ? "/" : res;
+        return res.isEmpty() ? "/" : res;
     }
 }
