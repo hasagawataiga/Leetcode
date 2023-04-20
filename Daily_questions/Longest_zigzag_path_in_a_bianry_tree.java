@@ -12,7 +12,7 @@ public class Longest_zigzag_path_in_a_bianry_tree {
         }
         int max = length;
         int rightFlow = 0;
-        int leftFlow = 0;
+        int leftFlow = 0; 
         int rightNonFlow = 0;
         int leftNonFlow = 0;
         if (isRight){
