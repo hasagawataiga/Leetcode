@@ -15,5 +15,5 @@ public class Best_time_to_buy_and_sell_stocks_II {
             right++;
         }
         return profit;
-    }
+    }g
 }
