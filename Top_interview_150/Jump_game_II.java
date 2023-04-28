@@ -22,4 +22,25 @@ public class Jump_game_II {
         
         return answer;
     }
+
+
+    // BFS approach
+    // public int jump(int[] nums) {
+    //     if (nums.length == 1){
+    //         return 0;
+    //     }
+    //     int left = 0;
+    //     int right = 0;
+    //     int furthest = 0;
+    //     int step = 0;
+    //     while (right < nums.length - 1){
+    //         for (int i = left; i < right + 1; i++){
+    //             furthest = Math.max(furthest, nums[i] + i);
+    //         }
+    //         step++;
+    //         left = right + 1;
+    //         right = furthest;
+    //     }
+    //     return step;
+    // }
 }
