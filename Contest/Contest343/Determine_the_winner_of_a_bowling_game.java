@@ -1,5 +1,7 @@
 package Contest.Contest343;
 
+
+// Easy
 public class Determine_the_winner_of_a_bowling_game {
     public int isWinner(int[] player1, int[] player2) {
         int count1 = 0;
