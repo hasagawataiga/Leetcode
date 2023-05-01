@@ -29,5 +29,5 @@ public class Jump_game {
             index++;
         }
         return false;
-    }
+    }g
 }
