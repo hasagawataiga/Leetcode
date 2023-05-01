@@ -4,10 +4,13 @@ public class H_index {
     public int hIndex(int[] citations) {
         int n = citations.length;
         int res = 0;
+        
+        // Store the times of this amount of citations appeared
         int[] citationsCount = new int[n + 1];
         for (int citation : citations){
             citationsCount[Math.min(n, citation)]++;
         }
+        
         int count = 0;
         for (int i = n; i >= 0; i--){
             count += citationsCount[i];
