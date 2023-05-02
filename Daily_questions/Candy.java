@@ -9,24 +9,22 @@ import java.util.Arrays;
 public class Candy {
     public int candy(int[] ratings) {
         int n = ratings.length;
-        int[] forward = new int[n];
-        int[] backward = new int[n];
-        Arrays.fill(forward, 1);
-        Arrays.fill(backward, 1);
+        int[] candies = new int[n];
+        Arrays.fill(candies, 1);
         for (int i = 1; i < n; i++){
             if (ratings[i] > ratings[i - 1]){
-                forward[i] = forward[i - 1] + 1;
+                candies[i] = candies[i - 1] + 1;
             }
         }
         for (int i = n - 2; i >= 0; i--){
             if (ratings[i] > ratings[i + 1]){
-                backward[i] = backward[i + 1] + 1;
+                candies[i] = Math.max(candies[i], candies[i + 1] + 1);
             }
         }
-        int candies = 0;
-        for (int i = 0; i < n; i++){
-            candies += Math.max(forward[i], backward[i]);
+        int sum = 0;
+        for (int candy : candies){
+            sum += candy;
         }
-        return candies;
+        return sum;
     }
 }
