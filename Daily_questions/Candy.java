@@ -19,7 +19,7 @@ public class Candy {
             }
         }
         for (int i = n - 2; i >= 0; i--){
-            if (backward[i] > ratings[i + 1]){
+            if (ratings[i] > ratings[i + 1]){
                 backward[i] = backward[i + 1] + 1;
             }
         }
