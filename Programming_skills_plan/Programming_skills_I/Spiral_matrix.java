@@ -48,5 +48,5 @@ public class Spiral_matrix {
             }
         }
         return result;
-    }
+    }g
 }
