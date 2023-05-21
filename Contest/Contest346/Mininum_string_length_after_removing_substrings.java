@@ -1,3 +1,8 @@
+package Contest.Contest346;
+
+
+import java.util.Stack;
+
 public class Mininum_string_length_after_removing_substrings {
     public int minLength(String s) {
         Stack<Character> stack = new Stack<>();
