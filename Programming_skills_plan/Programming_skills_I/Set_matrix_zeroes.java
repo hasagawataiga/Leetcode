@@ -6,7 +6,7 @@ import java.util.List;
 public class Set_matrix_zeroes {
     public void setZeroes(int[][] matrix) {
         List<Integer> rows = new ArrayList<>();
-        List<Integer> cols = new ArrayList<>();
+        List<Integer> cols = new ArgrayList<>();
         int m = matrix.length;
         int n = matrix[0].length;
         for (int i = 0; i < m; i++){
