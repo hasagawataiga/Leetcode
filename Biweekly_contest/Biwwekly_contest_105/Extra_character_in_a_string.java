@@ -29,7 +29,7 @@ public class Extra_character_in_a_string {
             System.out.print(dictionary[i] + ", ");
         }
         for (int i = 0; i < dictionary.length; i++){
-            if (s.contains(dictionary[i])){
+            if (s.contains(dictionary[i])){g
                 s = s.replaceAll(dictionary[i], "1");
             }
         }
