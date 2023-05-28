@@ -1,3 +1,6 @@
+package Contest.Contest347;
+
+
 public class Remove_trailing_zeros_from_a_string {
     public String removeTrailingZeros(String num) {
         int index = num.length() - 1;
