@@ -16,7 +16,7 @@ public class Shortest_path_in_binary_matrix {
             return false;
         }
         if (i == row - 1 && j == col - 1){
-            dp[i][j] = 1;
+            dp[i][j] = 0;
             return true;
         }
         if (visited[i][j]){
