@@ -48,7 +48,6 @@ public class Denote_the_maximum_bombs {
             }
         }
         int max = 0;
-        boolean[] visited = new boolean[n];
         for (int i = 0; i < n; i++){
             max = Math.max(max, dfs(map, i, new boolean[n]));
         }
