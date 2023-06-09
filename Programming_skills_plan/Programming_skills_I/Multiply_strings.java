@@ -1,6 +1,5 @@
 package Programming_skills_plan.Programming_skills_I;
 
-
 public class Multiply_strings{
     public String multiply(String num1, String num2) {
         if (num1.equals("0") || num2.equals("0")){
