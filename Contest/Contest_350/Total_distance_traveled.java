@@ -1,3 +1,6 @@
+package Contest.Contest_350;
+
+
 public class Total_distance_traveled {
     public int distanceTraveled(int mainTank, int additionalTank) {
         int total = 0;
