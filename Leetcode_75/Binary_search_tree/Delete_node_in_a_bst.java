@@ -12,9 +12,11 @@ public class Delete_node_in_a_bst {
         } else if (key > root.val){
             root.right = deleteNode(root.right, key);
         } else {
-            if (root.left == null){
-                return root.right;
-            }
+            // In the case, both are null and one is null eitheir
+            // Ignore the case root.left == null and root.right != null because I always consider the right side of the root
+            // if (root.left == null){
+            //     return root.right;
+            // }
             if (root.right == null){
                 return root.left;
             }
