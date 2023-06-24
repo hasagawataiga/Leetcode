@@ -15,37 +15,27 @@ public class Construct_the_longest_new_string {
         return max + 2;
     }
     private void concate(int[][][] dp, boolean[][][] visited, int x, int y, int z, int prev){
-        if (visited[x][y][z]){
+        if (x < 0 || y < 0 || z < 0 || visited[x][y][z]){
+            return;
+        }
+        if (x == 0 && y == 0 && z == 0){
             return;
         }
         visited[x][y][z] = true;
         int temp = 0;
-        if (prev == 0){
-            if (y > 0){
-                concate(dp, visited, x, y - 1, z, 1);
-                dp[x][y][z] = 2 + dp[x][y - 1][z];
-            }
-            
-        } else if (prev == 1){
-            if (x > 0){
-                concate(dp, visited, x - 1, y, z, 0);
-                temp = Math.max(temp, dp[x - 1][y][z]);
-            }
-            if (z > 0){
-                concate(dp, visited, x, y, z - 1, 2);
-                temp = Math.max(temp, dp[x][y][z - 1]);
-            }
-            dp[x][y][z] = temp + 2;
-        } else {
-            if (x > 0){
-                concate(dp, visited, x - 1, y, z, 0);
-                temp = Math.max(temp, dp[x - 1][y][z]);
-            }
-            if (z > 0){
-                concate(dp, visited, x, y, z - 1, 2);
-                temp = Math.max(temp, dp[x][y][z - 1]);
-            }
-            dp[x][y][z] = temp + 2;
+
+        if ((prev == 1 && x > 0) || (prev == 2 && x > 0)){
+            concate(dp, visited, x - 1, y, z, 0);
+            temp = Math.max(temp, dp[x - 1][y][z]);
         }
+        if (prev == 0 && y > 0){
+            concate(dp, visited, x, y - 1, z, 1);
+            temp = dp[x][y - 1][z];
+        }
+        if ((prev == 1 && z > 0) || (prev == 2 && z > 0)){
+            concate(dp, visited, x, y, z - 1, 2);
+            temp = Math.max(temp, dp[x][y][z - 1]);
+        }
+        dp[x][y][z] = temp + 2;
     }
 }
