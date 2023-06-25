@@ -23,6 +23,11 @@ public class Count_all_possible_routes {
             dp[index][fuel] = temp;
             return;
         }
+        // If the fuel need to go from index to finish city is greater than the fuel left -> dp[index][fuel] = 0;
+        // Whatever route use, it could not reach the finish city from index city
+        if (fuel > 0 && Math.abs(locations[index] - locations[end]) > fuel){
+            return;
+        }
         for (int i = 0; i < n; i++){
             if (i == index){
                 continue;
