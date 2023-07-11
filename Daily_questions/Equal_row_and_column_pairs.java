@@ -1,4 +1,5 @@
-
+import java.util.HashMap;
+import java.util.Map;
 
 public class Equal_row_and_column_pairs{
     public class TrieNode{
