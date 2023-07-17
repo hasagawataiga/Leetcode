@@ -2,6 +2,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
+
+// From Leetcode Editorial
 public class Smallest_suficient_team {
     public int[] smallestSufficientTeam(String[] req_skills, List<List<String>> people) {
         int n = people.size(), m = req_skills.length;
