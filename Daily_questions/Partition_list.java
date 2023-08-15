@@ -1,6 +1,7 @@
-
+import interview_questions.linked_list.ListNode;
 
 public class Partition_list{
+    
     public ListNode partition(ListNode given, int x) {
         ListNode head = new ListNode(0);
         ListNode headCurr = head;
