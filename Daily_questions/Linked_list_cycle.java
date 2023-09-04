@@ -1,3 +1,5 @@
+import interview_questions.linked_list.ListNode;
+
 public class Linked_list_cycle {
     public boolean hasCycle(ListNode head) {
         ListNode slow = head;
