@@ -1,4 +1,5 @@
-
+import java.util.HashMap;
+import java.util.Map;
 
 public class Number_of_good_pairs{
     public int numIdenticalPairs(int[] nums) {
