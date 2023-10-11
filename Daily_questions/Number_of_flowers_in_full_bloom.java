@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class Number_of_flowers_in_full_bloom {
     public int[] fullBloomFlowers(int[][] flowers, int[] people) {
         List<Integer> starts = new ArrayList();
