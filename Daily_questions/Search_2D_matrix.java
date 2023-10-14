@@ -1,5 +1,5 @@
 public class Search_2D_matrix {
-    ublic boolean searchMatrix(int[][] matrix, int target) {
+    public boolean searchMatrix(int[][] matrix, int target) {
         int m = matrix.length;
         int n = matrix[0].length;
         int left = 0;
