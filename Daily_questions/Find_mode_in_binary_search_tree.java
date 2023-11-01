@@ -1,3 +1,10 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import interview_questions.trees.TreeNode;
+
 public class Find_mode_in_binary_search_tree {
     public int[] findMode(TreeNode root) {
         Map<Integer, Integer> map = new HashMap<>();
