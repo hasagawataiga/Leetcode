@@ -1,5 +1,6 @@
 
-public Valid_anagram {
+
+public class Valid_anagram {
     public boolean isAnagram(String s, String t) {
         if (s.length() != t.length()) {
             return false;

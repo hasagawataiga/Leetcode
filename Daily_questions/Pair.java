@@ -1,7 +1,10 @@
 
 public class Pair<T1, T2> {
-
-    public Pair(int i, int j) {
+    T1 key;
+    T2 value;
+    public Pair(T1 key, T2 value) {
+        this.key = key; 
+        this.value = value;
     }
 
 }
