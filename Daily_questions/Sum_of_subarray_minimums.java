@@ -1,26 +1,43 @@
+import java.util.Stack;
+
 public class Sum_of_subarray_minimums {
     int MOD = 1_000_000_007;
+
     public int sumSubarrayMins(int[] arr) {
-        int sum = 0;
-        for (int i = 0; i < arr.length; i++) {
-            int j = arr.length - 1;
-            while (j >= i) {
-                int minIndex = findMin(arr, i, j);
-                sum += arr[minIndex] * (j - minIndex + 1);
-                sum %= MOD;
-                j = minIndex - 1;
+        int n = arr.length;
+        int[] left = new int[n];
+        int[] right = new int[n];
+
+        Stack<Integer> stack = new Stack<>();
+
+        // Find the nearest smaller element on the left
+        for (int i = 0; i < n; i++) {
+            while (!stack.isEmpty() && arr[i] < arr[stack.peek()]) {
+                stack.pop();
             }
+            left[i] = stack.isEmpty() ? -1 : stack.peek();
+            stack.push(i);
         }
-        return sum;
-    }
-    private int findMin(int[] arr, int start, int end) {
-        int min = arr[start];
-        for (int i = start + 1; i <= end; i++) {
-            if (arr[i] < min) {
-                start = i;
-                min = arr[i];
+
+        stack.clear();
+
+        // Find the nearest smaller element on the right
+        for (int i = n - 1; i >= 0; i--) {
+            while (!stack.isEmpty() && arr[i] <= arr[stack.peek()]) {
+                stack.pop();
             }
+            right[i] = stack.isEmpty() ? n : stack.peek();
+            stack.push(i);
         }
-        return start;
+
+        long sum = 0;
+
+        // Calculate the contribution of each element to the final sum
+        for (int i = 0; i < n; i++) {
+            sum += (long) arr[i] * (i - left[i]) * (right[i] - i);
+            sum %= MOD;
+        }
+
+        return (int)sum;
     }
 }
