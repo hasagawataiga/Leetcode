@@ -1,3 +1,5 @@
+import interview_questions.linked_list.ListNode;
+
 public class Remove_zero_sum_consecutive_nodes_from_linked_list {
     public ListNode removeZeroSumSublists(ListNode head) {
         ListNode before = new ListNode(0);
