@@ -1,8 +1,11 @@
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class Minimum_number_of_arrows_to_burst_balloons {
-    public int findMinArrowShots(int[][] points) {
-        mergeSort(points, 0, points.length - 1);
+        public int findMinArrowShots(int[][] points) {
+        Arrays.sort(points, Comparator.comparingInt(a -> a[1]));
         int count = 1;
-        int end = points[0][0];
+        int end = points[0][1];
         for (int i = 1; i < points.length; i++) {
             if (points[i][0] > end) {
                 count++;
@@ -11,7 +14,7 @@ public class Minimum_number_of_arrows_to_burst_balloons {
         }
         return count;
     }
-
+    // Another sorted approach using Merge sort algorithm
     private static void mergeSort(int[][] arr, int left, int right) {
         if (left < right) {
             int mid = (left + right) / 2;
