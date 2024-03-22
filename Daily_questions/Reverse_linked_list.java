@@ -1,3 +1,5 @@
+import interview_questions.linked_list.ListNode;
+
 public class Reverse_linked_list {
     public ListNode reverseList(ListNode head) {
         ListNode prev = null;
