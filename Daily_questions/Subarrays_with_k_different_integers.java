@@ -1,11 +1,14 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class Subarray_product_less_than_k {
-    public int subarraysWithKDistinct(int[] nums, int k) {
-        return findingSubarrayWithKUniques(nums, k) - findingSubarrayWithKUniques(nums, k - 1);
+public class Subarrays_with_k_different_integers {
+    public static void main(String[] args){
+        int[] nums = new int[] {1,2,1,2,3};
+        int k = 2;
+        int ans = subarraysWithKDistinct(nums, k);
+        System.out.println(ans);
     }
-    private int findingSubarrayWithKUniques(int[] nums, int k) {
+    public static int subarraysWithKDistinct(int[] nums, int k) {
         Map<Integer, Integer> container = new HashMap<>();
         int first = 0;
         int second = 0;
@@ -17,15 +20,20 @@ public class Subarray_product_less_than_k {
             if (container.get(nums[second]) == 1) {
                 uniques++;
             }
-            while (uniques > k) {
+            System.out.print(nums[first] + "-" + nums[second] + ", " + "\n");
+            if (uniques == k) {
+                count++;
+                second++;
+            } else if (uniques > k) {
                 container.put(nums[first], container.get(nums[first]) - 1);
                 if (container.get(nums[first]) == 0) {
                     uniques--;
                 }
                 first++;
+            } else {
+                second++;
             }
-            count += (second - first + 1);
-            second++;
+            // System.out.print(nums[first] + "-" + nums[second] + ", " + "\n");
         }        
         return count;
     }
