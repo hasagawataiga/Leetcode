@@ -1,27 +1,22 @@
 public class Number_of_student_unable_to_eat_lunch {
     public int countStudents(int[] students, int[] sandwiches) {
-        Queue<Integer> queue = new LinkedList<>();
+        int circularSandwichCount = 0;
+        int squareSandwichCount = 0;
         for (int student : students) {
-            queue.offer(student);
+            if (student == 1) {
+                squareSandwichCount++;
+            } else {
+                circularSandwichCount++;
+            }
         }
-        int sandwichIndex = 0;
-        int studentIndex = 0;
-        while (!queue.isEmpty() && sandwichIndex < sandwiches.length) {
-            int size = queue.size();
-            boolean edible = false;
-            for (int i = 0; i < size; i++) {
-                int firstGuy = queue.poll();
-                if (firstGuy == sandwiches[sandwichIndex]) {
-                    sandwichIndex++;
-                    edible = true;
-                } else {
-                    queue.offer(firstGuy);
-                }
+        for (int sandwich : sandwiches) {
+            if (sandwich == 1 && squareSandwichCount > 0) {
+                squareSandwichCount--;
+            } else if (sandwich == 0 && circularSandwichCount > 0) {
+                circularSandwichCount--;
+            } else {
+                return squareSandwichCount + circularSandwichCount;
             }
-            if (!edible) {
-                return queue.size();
-            }
-            studentIndex++;
         }
         return 0;
     }
