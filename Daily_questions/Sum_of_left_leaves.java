@@ -1,3 +1,5 @@
+import interview_questions.trees.TreeNode;
+
 public class Sum_of_left_leaves {
     int sum = 0;
     public int sumOfLeftLeaves(TreeNode root) {
