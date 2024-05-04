@@ -22,4 +22,20 @@ public class Boats_to_save_people {
         }
         return min;
     }
+    // Another Approach
+    
+    // public int numRescueBoats(int[] people, int limit) {
+    //     Arrays.sort(people);
+    //     int min = 0;
+    //     int smallest = 0;
+    //     for (int i = people.length - 1; i >= 0; i--) {
+    //         if (i >= smallest) {
+    //             if ((people[i] + people[smallest]) <= limit) {
+    //                 smallest++;
+    //             }
+    //             min++;
+    //         }
+    //     }
+    //     return min;
+    // }
 }
