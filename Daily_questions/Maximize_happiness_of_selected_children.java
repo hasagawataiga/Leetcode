@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Maximize_happiness_of_selected_children {
     public long maximumHappinessSum(int[] happiness, int k) {
         long ans = 0;
