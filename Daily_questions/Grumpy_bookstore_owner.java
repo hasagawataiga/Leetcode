@@ -1,6 +1,5 @@
 public class Grumpy_bookstore_owner {
     public int maxSatisfied(int[] customers, int[] grumpy, int minutes) {
-        int startMin = 0;
         int left = 0;
         int right = left + minutes;
         int maxCustomersInGrumpy = 0;
@@ -11,6 +10,7 @@ public class Grumpy_bookstore_owner {
                 maxIndex = 0;
             }
         }
+        // Find the max customers in grumpy period interval
         int currentInterval = maxCustomersInGrumpy;
         while (right < customers.length) {
             if (grumpy[left] == 1) {
