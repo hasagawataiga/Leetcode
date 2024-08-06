@@ -1,6 +1,3 @@
-
-
-
 // Greedy approachg
 public class Gas_station {
     public int canCompleteCircuit(int[] gas, int[] cost) {
