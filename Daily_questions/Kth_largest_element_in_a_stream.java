@@ -3,7 +3,6 @@ import java.util.Arrays;
 public class Kth_largest_element_in_a_stream {
     class KthLargest {
     private int[] kthElements;
-    private int[] nums;
     private int k;
     public KthLargest(int k, int[] nums) {
         this.k = k;
