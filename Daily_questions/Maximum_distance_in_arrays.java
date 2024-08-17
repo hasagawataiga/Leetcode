@@ -1,4 +1,4 @@
-
+import java.util.List;
 
 public class Maximum_distance_in_arrays {
     public int maxDistance(List<List<Integer>> arrays) {
