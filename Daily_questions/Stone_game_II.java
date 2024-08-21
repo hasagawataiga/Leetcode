@@ -4,6 +4,13 @@
 
 // From Leetcode Editorial
 public class Stone_game_II {
+
+    public static void main(String[] args) {
+        int[] example = new int[]{2, 7, 9, 4, 4};
+        Stone_game_II instance = new Stone_game_II();
+        System.out.println(instance.stoneGameII(example));
+    }
+
     private int f(int[] piles, int[][][] dp, int p, int i, int m) {
         if (i == piles.length) {
             return 0;
@@ -35,3 +42,5 @@ public class Stone_game_II {
         return f(piles, dp, 0, 0, 1);
     }
 }
+
+
