@@ -1,3 +1,5 @@
+package Daily_questions;
+
 import java.util.Stack;
 
 import interview_questions.linked_list.ListNode;
