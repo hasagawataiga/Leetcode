@@ -28,59 +28,35 @@ public class Walking_robot_simulation {
             int x2 = coor2.getX();
             int y2 = coor2.getY();
             boolean isBlocked = false;
-            // int index = 0;
             for (int i = 0; i < obstacles.length; i++) {
                 int x = obstacles[i][0];
                 int y = obstacles[i][1];
                 if (currDirection == Direction.NORTH && y > y1 && y <= y2 && x == x1) {
                     coor1.setY(y - 1);
                     isBlocked = true;
-                    // index = i;
                     break;
                 }
                 if (currDirection == Direction.EAST && x > x1 && x <= x2 && y == y1) {
                     coor1.setX(x - 1);
                     isBlocked = true;
-                    // index = i;
                     break;
                 }
                 if (currDirection == Direction.SOUTH && y < y1 && y >= y2 && x == x1) {
                     coor1.setY(y + 1);
                     isBlocked = true;
-                    // index = i;
                     break;
                 }
                 if (currDirection == Direction.WEST && x < x1 && x >= x2 && y == y1) {
                     coor1.setX(x + 1);
-                    // index = i;
-                    // setRobotLocationBeforeBlockedByObstacle(currDirection, new Coor(x, y), coor1);
                     isBlocked = true;
                     break;
                 }
             }
             if (isBlocked) {
-                // System.out.println("Blocked by (" + obstacles[index][0] + ", " + obstacles[index][1] + ")");
                 return true;
             }
             return false;
         }
-
-    //     private void setRobotLocationBeforeBlockedByObstacle (Direction direction, Coor obstacle, Coor prevCoor) {
-    //         switch (direction) {
-    //             case NORTH:
-    //                 prevCoor.setY(obstacle.getY() - 1);
-    //                 break;
-    //             case EAST:
-    //                 prevCoor.setX(obstacle.getX() - 1);
-    //                 break;
-    //             case SOUTH:
-    //                 prevCoor.setY(obstacle.getY() + 1);
-    //                 break;
-    //             case WEST:
-    //                 prevCoor.setX(obstacle.getX() + 1);
-    //                 break;
-    //         }
-    //     }
     }
     
     class Coor {
@@ -95,7 +71,6 @@ public class Walking_robot_simulation {
             this.y = coor.getY();
         }
         public void moveTo(Direction direction, int units) {
-            // System.out.print("(" + this.x + ", " + this.y + ")" + " move " + direction.toString() + ": " + units + " to ");
             switch (direction) {
                 case NORTH:
                     this.y += units;
@@ -110,7 +85,6 @@ public class Walking_robot_simulation {
                     this.x -= units;
                     break;
             }
-            // System.out.println("(" + this.x + ", " + this.y + ")\n");
         }
         public void setX(int x) {this.x = x;}
         public void setY(int y) {this.y = y;}
@@ -128,7 +102,6 @@ public class Walking_robot_simulation {
             // Calculate the next index based on the current direction and the turn direction
             int directionCount = Direction.values().length;
             int currentIndex = this.ordinal();
-            // System.out.print(this.toString() + " changed to ");
             if (directionTurn == DirectionTurn.LEFT) {
                 // Turn left (anti-clockwise)
                 currentIndex = (currentIndex - 1 + directionCount) % directionCount;
@@ -136,7 +109,6 @@ public class Walking_robot_simulation {
                 // Turn right (clockwise)
                 currentIndex = (currentIndex + 1) % directionCount;
             }
-            // System.out.println(Direction.values()[currentIndex] + "\n");
             // Return the new direction
             return Direction.values()[currentIndex];
         }
