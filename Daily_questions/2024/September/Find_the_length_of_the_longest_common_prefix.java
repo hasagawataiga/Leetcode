@@ -1,4 +1,7 @@
-public class Find_the_length_of_the_common_prefix {
+import java.util.HashSet;
+import java.util.Set;
+
+public class Find_the_length_of_the_longest_common_prefix {
     class Solution {
         public int longestCommonPrefix(int[] arr1, int[] arr2) {
             Set<String> prefixs = new HashSet<>();
