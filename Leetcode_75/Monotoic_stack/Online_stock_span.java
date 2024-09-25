@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 public class Online_stock_span {
     class StockSpanner {
         class Stock {
