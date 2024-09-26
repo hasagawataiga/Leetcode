@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class My_calendar_i {
     class MyCalendar {
         List<int[]> intervals;
