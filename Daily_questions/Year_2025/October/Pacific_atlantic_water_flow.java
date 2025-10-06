@@ -13,22 +13,26 @@ public class Pacific_atlantic_water_flow {
             n = heights[0].length;
             paths = new boolean[m][n][2];
             List<List<Integer>> res = new ArrayList<>();
-            boolean[][] isChecked = new boolean[m][n];
+            boolean[][] canReachPacific = new boolean[m][n];
             for (int i = 0; i < m; i++) {
-                for (int j = 0; j < n; j++) {
-                    // isChecked = new boolean[m][n];
-                    if (isChecked[i][j]) {
-                        continue;
-                    }
-                    traversal(heights, isChecked, i, j);
-                    // System.out.println("[" + i + " " + j + "]: " + paths[i][j][0] + " " + paths[i][j][1]);
-                    // debug(paths);
-                }
+                traversal(heights, canReachPacific, i, 0, heights[i][0]);
             }
+            for (int j = 0; j < n; j++) {
+                traversal(heights, canReachPacific, 0, j, heights[0][j]);
+            }
+
+            boolean[][] canReachAtlantic = new boolean[m][n];
+            for (int j = 0; j < n; j++) {
+                traversal(heights, canReachAtlantic, m - 1, j, heights[m - 1][j]);
+            }
+            for (int i = 0; i < m - 1; i++) {
+                traversal(heights, canReachAtlantic, i, n - 1, heights[i][n - 1]);
+            }
+
 
             for (int i = 0; i < m; i++) {
                 for (int j = 0; j < n; j++) {
-                    if (paths[i][j][0] && paths[i][j][1]) {
+                    if (canReachAtlantic[i][j] && canReachPacific[i][j]) {
                         List<Integer> curr = new ArrayList<>();
                         curr.add(i);
                         curr.add(j);
@@ -40,54 +44,17 @@ public class Pacific_atlantic_water_flow {
             return res;
         }
 
-        private void debug(boolean[][][] arr) {
-            for (int i = 0; i < m; i++) {
-                for (int j = 0; j < n; j++) {
-                    String ch1 = arr[i][j][0] ? "T" : "F";
-                    String ch2 = arr[i][j][1] ? "T" : "F";
-                    System.out.print(ch1 + ch2 + " ");
-                }
-                System.out.println();
-            }
-            System.out.println();
-        }
-
-        private void traversal(int[][] heights, boolean[][] isChecked, int i, int j) {
-            if (isChecked[i][j]) {
-                return;
-            }
-            isChecked[i][j] = true;
-            if (i == 0 || j == 0) {
-                paths[i][j][0] = true;
-            }
-            if (i == m - 1 || j == n - 1) {
-                paths[i][j][1] = true;
-            }
-            if (paths[i][j][0] && paths[i][j][1]) {
+        private void traversal(int[][] heights, boolean[][] canReachOcean, int i, int j, int prevHeight) {
+            if (i < 0 || i >= m || j < 0 || j >= n || canReachOcean[i][j] || heights[i][j] < prevHeight) {
                 return;
             }
 
-            if (i + 1 < m && heights[i + 1][j] <= heights[i][j]) {
-                traversal(heights, isChecked, i + 1, j);
-                paths[i][j][0] = paths[i][j][0] || paths[i + 1][j][0];
-                paths[i][j][1] = paths[i][j][1] || paths[i + 1][j][1];  
-            }
-            if (i - 1 >= 0 && heights[i - 1][j] <= heights[i][j]) {
-                traversal(heights, isChecked, i - 1, j);
-                paths[i][j][0] = paths[i][j][0] || paths[i - 1][j][0];
-                paths[i][j][1] = paths[i][j][1] || paths[i - 1][j][1];            
-            }
-            if (j + 1 < n && heights[i][j + 1] <= heights[i][j]) {
-                traversal(heights, isChecked, i, j + 1);
-                paths[i][j][0] = paths[i][j][0] || paths[i][j + 1][0];
-                paths[i][j][1] = paths[i][j][1] || paths[i][j + 1][1];  
-            }
-            if (j - 1 >= 0 && heights[i][j - 1] <= heights[i][j]) {
-                traversal(heights, isChecked, i, j - 1);
-                paths[i][j][0] = paths[i][j][0] || paths[i][j - 1][0];
-                paths[i][j][1] = paths[i][j][1] || paths[i][j - 1][1];  
-            }
-            return;
+            canReachOcean[i][j] = true;
+
+            traversal(heights, canReachOcean, i + 1, j, heights[i][j]);
+            traversal(heights, canReachOcean, i - 1, j, heights[i][j]);
+            traversal(heights, canReachOcean, i, j + 1, heights[i][j]);
+            traversal(heights, canReachOcean, i, j - 1, heights[i][j]);
         }
     }
 }
