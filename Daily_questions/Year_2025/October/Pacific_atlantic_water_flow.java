@@ -14,17 +14,21 @@ public class Pacific_atlantic_water_flow {
             paths = new boolean[m][n][2];
             List<List<Integer>> res = new ArrayList<>();
             boolean[][] canReachPacific = new boolean[m][n];
+            // Go from top edge
             for (int i = 0; i < m; i++) {
                 traversal(heights, canReachPacific, i, 0, heights[i][0]);
             }
+            // Go from left edge
             for (int j = 0; j < n; j++) {
                 traversal(heights, canReachPacific, 0, j, heights[0][j]);
             }
 
             boolean[][] canReachAtlantic = new boolean[m][n];
+            // Go from right edge
             for (int j = 0; j < n; j++) {
                 traversal(heights, canReachAtlantic, m - 1, j, heights[m - 1][j]);
             }
+            // Go from bottom edge
             for (int i = 0; i < m - 1; i++) {
                 traversal(heights, canReachAtlantic, i, n - 1, heights[i][n - 1]);
             }
