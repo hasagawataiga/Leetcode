@@ -19,8 +19,8 @@ public class Simple_bank_system {
                 return false;
             }
 
-            balance[account1 - 1] -= money;
-            balance[account2 - 1] += money;
+            balance[getAccountIndex(account1)] -= money;
+            balance[getAccountIndex(account2)] += money;
 
             return true;
         }
@@ -30,7 +30,7 @@ public class Simple_bank_system {
                 return false;
             }
 
-            balance[account - 1] += money;
+            balance[getAccountIndex(account)] += money;
 
             return true;
         }
@@ -43,7 +43,7 @@ public class Simple_bank_system {
                 return false;
             }
 
-            balance[account - 1] -= money;
+            balance[getAccountIndex(account)] -= money;
             
             return true;
         }
@@ -53,7 +53,11 @@ public class Simple_bank_system {
         }
 
         private boolean isEnoughMoney(int account, long money) {
-            return money <= balance[account - 1] ? true : false;
+            return money <= balance[getAccountIndex(account)] ? true : false;
+        }
+
+        private int getAccountIndex(int account) {
+            return account - 1;
         }
     }
 
