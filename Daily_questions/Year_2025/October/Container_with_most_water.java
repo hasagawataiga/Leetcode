@@ -1,4 +1,3 @@
-package Daily_questions.Year_2025.October;
 
 public class Container_with_most_water {
     class Solution {
